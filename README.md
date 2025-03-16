@@ -74,7 +74,7 @@ This will start both the server and client in development mode.
 
 4. Add your GitHub repository as a remote:
    ```
-   git remote add origin https://github.com/yourusername/college-marketplace.git
+   git remote add origin https://github.com/sadaltman/college-marketplace.git
    ```
 
 5. Push to GitHub:
