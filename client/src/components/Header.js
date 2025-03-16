@@ -57,7 +57,7 @@ const Header = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      navigate(`/search/${searchTerm}`);
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
     } else {
       navigate('/');
     }

@@ -33,7 +33,7 @@ const HomePage = () => {
       <div className="jumbotron p-5 rounded mb-5">
         <h1 className="display-4 fw-bold">Welcome to College Marketplace</h1>
         <p className="lead fs-4">
-          Buy, sell, and trade items with other students on your campus.
+          Buy, sell, and rent items with other students on your campus.
         </p>
         <hr className="my-4" />
         <p className="mb-4">
@@ -68,7 +68,8 @@ const HomePage = () => {
         {recentListings.map((listing) => {
           const listingTypeColor = 
             listing.listingType === 'sell' ? 'primary' : 
-            listing.listingType === 'buy' ? 'success' : 'warning';
+            listing.listingType === 'buy' ? 'success' : 
+            listing.listingType === 'rent' ? 'info' : 'warning';
           
           return (
             <Col key={listing._id} sm={12} md={6} lg={4} className="mb-4">

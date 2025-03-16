@@ -103,7 +103,7 @@ const CategoryPage = () => {
               <option value="all">All Types</option>
               <option value="sell">Selling</option>
               <option value="buy">Buying</option>
-              <option value="exchange">Exchange</option>
+              <option value="rent">Renting</option>
             </Form.Select>
           </Form.Group>
         </div>
@@ -118,7 +118,8 @@ const CategoryPage = () => {
           {displayListings.map((listing) => {
             const listingTypeColor = 
               listing.listingType === 'sell' ? 'primary' : 
-              listing.listingType === 'buy' ? 'success' : 'warning';
+              listing.listingType === 'buy' ? 'success' : 
+              listing.listingType === 'rent' ? 'info' : 'warning';
             
             return (
               <Col key={listing._id} sm={12} md={6} lg={4} className="mb-4">

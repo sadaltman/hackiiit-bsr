@@ -240,7 +240,7 @@ const EditListingPage = () => {
               >
                 <option value="sell">Selling</option>
                 <option value="buy">Buying</option>
-                <option value="trade">Trading</option>
+                <option value="rent">Renting</option>
               </Form.Select>
             </Form.Group>
 

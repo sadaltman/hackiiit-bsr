@@ -11,6 +11,7 @@ const {
   buyListing,
   approvePurchase,
   declinePurchase,
+  searchListings,
 } = require('../controllers/listingController');
 const { protect } = require('../middleware/authMiddleware');
 const upload = require('../middleware/uploadMiddleware');
@@ -18,6 +19,7 @@ const upload = require('../middleware/uploadMiddleware');
 router.route('/').get(getListings).post(protect, upload.single('image'), createListing);
 router.get('/recent', getRecentListings);
 router.get('/user', protect, getUserListings);
+router.get('/search', searchListings);
 router
   .route('/:id')
   .get(getListingById)

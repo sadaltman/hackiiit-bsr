@@ -28,6 +28,8 @@ const ListingPage = () => {
           setListingTypeColor('primary');
         } else if (data.listingType === 'buy') {
           setListingTypeColor('success');
+        } else if (data.listingType === 'rent') {
+          setListingTypeColor('info');
         } else {
           setListingTypeColor('warning');
         }

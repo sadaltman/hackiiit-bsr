@@ -404,6 +404,30 @@ const declinePurchase = asyncHandler(async (req, res) => {
   res.json({ message: 'Purchase request declined' });
 });
 
+// @desc    Search listings
+// @route   GET /api/listings/search
+// @access  Public
+const searchListings = asyncHandler(async (req, res) => {
+  const query = req.query.q;
+  
+  if (!query) {
+    return res.status(400).json({ message: 'Search query is required' });
+  }
+
+  const listings = await Listing.find({
+    $or: [
+      { title: { $regex: query, $options: 'i' } },
+      { description: { $regex: query, $options: 'i' } },
+    ],
+    status: { $ne: 'inactive' }
+  })
+    .populate('user', 'username')
+    .populate('category', 'name')
+    .sort({ createdAt: -1 });
+
+  res.json(listings);
+});
+
 module.exports = {
   getListings,
   getRecentListings,
@@ -415,4 +439,5 @@ module.exports = {
   buyListing,
   approvePurchase,
   declinePurchase,
+  searchListings,
 }; 

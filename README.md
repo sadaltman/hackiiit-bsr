@@ -1,6 +1,6 @@
-# College Marketplace MERN Application
+# Buy Sell Rent Webapp
 
-A full-stack marketplace application built with the MERN stack (MongoDB, Express, React, Node.js) for college students to buy, sell, and exchange items.
+A full-stack marketplace application built with the MERN stack (MongoDB, Express, React, Node.js) for college students to buy, sell, and rent items.
 
 ## Features
 
@@ -99,4 +99,4 @@ This will start both the server and client in development mode.
 
 ## License
 
-MIT 
+GNU General Public License V3.0
